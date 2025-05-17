@@ -1,0 +1,42 @@
+#
+# Copyright (C) 2022 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Release name
+PRODUCT_RELEASE_NAME := a05s
+
+# Inherit from common AOSP config
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
+# Inherit some common pb stuff.
+$(call inherit-product, vendor/pb/config/common.mk)
+
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/samsung/a05s/device_pb.mk)
+
+# Set those variables here to overwrite the inherited values. 
+BOARD_VENDOR := qcom
+PRODUCT_BRAND := samsung
+PRODUCT_DEVICE := a05s
+PRODUCT_NAME := pb_a05s 
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := A057G
+TARGET_VENDOR := samsung
+
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a05s/recovery/root,recovery/root)
