@@ -36,7 +36,7 @@ PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := a05s
 PRODUCT_NAME := pb_a05s 
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := A057G
+PRODUCT_MODEL := A057F
 TARGET_VENDOR := samsung
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a05s/recovery/root,recovery/root)
