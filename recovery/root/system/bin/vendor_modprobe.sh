@@ -6,7 +6,6 @@
 #=============================================================================
 
 VENDOR_DIR="/vendor/lib/modules"
-VENDOR_DLKM_DIR="/vendor_dlkm/lib/modules"
 
 MODPROBE="/vendor/bin/modprobe"
 
